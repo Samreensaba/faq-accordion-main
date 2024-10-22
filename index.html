@@ -18,7 +18,12 @@
       .container {
         margin: 5rem 2rem;
         padding: 7rem 30rem;
-        background: url("./assets/images/background-pattern-desktop.svg");
+        background: url("./assets/images/background-pattern-desktop.svg")
+            no-repeat top,
+          hsl(275, 100%, 97%);
+        background-size: 100% 25%, 100% 100%;
+        background-position: top, bottom;
+        color: hsl(292, 16%, 49%);
       }
       .section {
         padding: 2rem;
@@ -27,6 +32,7 @@
       }
       .heading {
         display: inline;
+        color: hsl(292, 42%, 14%);
       }
       .img {
         width: 23px;
@@ -36,6 +42,8 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        color: hsl(292, 42%, 14%);
+        font-weight: bold;
       }
       .plusMinus {
         width: 16px;
