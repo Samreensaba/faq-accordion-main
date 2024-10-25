@@ -22,21 +22,24 @@
       body {
         font-size: 16px;
         font-family: "Work Sans", sans-serif;
-      }
-      .container {
-        margin-top: 5rem;
-        margin-bottom: 3rem;
-        margin-right: auto;
-        margin-left: auto;
-        background: url("./assets/images/background-pattern-desktop.svg")
-            no-repeat top,
-          hsl(275, 100%, 97%);
-        background-size: 100% 32%, 100% 100%;
-        background-position: top, bottom;
+        background-color: hsl(275, 100%, 97%);
+        margin: 0;
+        position: relative;
+
         color: hsl(292, 16%, 49%);
-        max-width: 70%;
+
         padding-top: 7rem;
-        padding-bottom: 7rem;
+      }
+      body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 30%; /* Height for the patterned area */
+        background: url("/faq-accordion-main/assets/images/background-pattern-desktop.svg")
+          repeat; /* Pattern */
+        z-index: -1; /* Send it behind the content */
       }
       .section {
         max-width: 30%;
@@ -88,6 +91,10 @@
       .attribution {
         font-size: 11px;
         text-align: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
       }
       .attribution a {
         color: hsl(228, 45%, 44%);
@@ -98,7 +105,11 @@
     <div class="container">
       <div class="section">
         <div class="heading">
-          <img class="img" src="/assets/images/icon-star.svg" alt="star icon" />
+          <img
+            class="img"
+            src="/faq-accordion-main/assets/images/icon-star.svg"
+            alt="star icon"
+          />
           <h1 class="heading">FAQs</h1>
         </div>
 
@@ -171,12 +182,12 @@
       </div>
     </div>
 
-    <div class="attribution">
+    <footer class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
       >. Coded by <a href="#">Your Name Here</a>.
-    </div>
+    </footer>
 
     <script>
       const questions = document.querySelectorAll(".faqs");
